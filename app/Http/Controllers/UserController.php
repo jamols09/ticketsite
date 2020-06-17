@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ValidationRequest;
 use PragmaRX\Countries\Package\Countries;
 use Illuminate\Http\Request;
 Use Illuminate\Support\Facades\Storage;
@@ -19,21 +20,11 @@ class UserController extends Controller
         return view('settings.profile', compact('countries','user'));
     }
 
-    public function update(Request $request)
+    public function update(ValidationRequest $request)
     {
-
-        $this->validate($request,[
-            'image' => 'mimes:jpg,jpeg,png,bmp,tiff |max:5120',
-            'name' => 'required|max:255'
-        ],
-            $messages = [
-                'mimes' => 'Only jpeg, png & bmp are allowed.'
-            ]
-        );
-
         if($request->hasFile('image')) {
 
-            if(Auth::user()->profile){
+            if(Auth::user()->profile) {
                 Storage::delete('public/profile-img/'.Auth::user()->profile);
             }
 

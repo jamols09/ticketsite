@@ -8,9 +8,10 @@
             <div class="card">
                 <div class="card-header">Profile</div>
                 <div class="card-body">
-                    {{-- @if($errors->any())
-                    {!! implode('', $errors->all('<div>:message</div>')) !!}
-                    @endif --}}
+
+                {{-- Display Message Component --}}
+                <x-alert/>
+
                 <form method="POST" action="{{route('profile')}}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group row">
