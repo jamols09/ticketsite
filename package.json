@@ -1,0 +1,15 @@
+{
+  "name": "starkovsky/laravel-vue-cli",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "serve:app": "cd resources/frontend/app && yarn run serve",
+    "build:app": "cd resources/frontend/app && yarn run build",
+    "lint:app": "cd resources/frontend/app && yarn run lint",
+    "test:app": "cd resources/frontend/app && yarn run test:unit",
+    "serve:admin": "cd resources/frontend/admin && yarn run serve",
+    "build:admin": "cd resources/frontend/admin && yarn run build",
+    "lint:admin": "cd resources/frontend/admin && yarn run lint",
+    "test:admin": "cd resources/frontend/admin && yarn run test:unit"
+  }
+}
